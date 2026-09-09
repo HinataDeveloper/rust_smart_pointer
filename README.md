@@ -1,2 +1,2 @@
-# rust_smart_pointer
+# Rust Smart Pointer Sample Code
 Learning Rust Smart Pointer
