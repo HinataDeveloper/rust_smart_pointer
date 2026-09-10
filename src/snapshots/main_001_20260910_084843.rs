@@ -1,7 +1,7 @@
 // Date: Thu Sep 10 2026
 
 // Project: Learning Chapter 15
-// Goal: Using Smart Pointer: ...
+// Goal: Using Smart Pointer: Basic using of Box smart pointer
 // Dependency: Without dependency
 
 // rustc 1.100.0-nightly (cea272fa3 2026-09-07)
@@ -27,6 +27,13 @@
 
 fn main() {
     println!("\n");
+
+    let my_number: Box<i32> = Box::new(391);
+
+    // my_number dereference automaticaly
+    println!("Auto: value of my_number is: {}", my_number);
+
+    println!("Non-Auto: value of my_number is: {}", *my_number);
 
     println!("\nThe End ...\n");
 }
