@@ -25,8 +25,13 @@
 // Kernel Version: 7.1.13-200.fc44.x86_64
 // Firmware Version: 71CN51WW(V1.21)
 
-fn main() {
+use std::error::Error;
+
+fn main() -> Result<(), Box<dyn Error>> {
     println!("\n");
 
+    
+    
     println!("\nThe End ...\n");
+    Ok(())
 }
