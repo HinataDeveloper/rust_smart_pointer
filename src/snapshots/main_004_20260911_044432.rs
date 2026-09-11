@@ -1,7 +1,7 @@
 // Date: Thu Sep 11 2026
 
 // Project: Learning Chapter 15
-// Goal: Using Smart Pointer: ...
+// Goal: Using Smart Pointer: Using Box for Recursive Type
 // Dependency: Without dependency
 
 // rustc 1.100.0-nightly (cea272fa3 2026-09-07)
@@ -25,8 +25,20 @@
 // Kernel Version: 7.1.13-200.fc44.x86_64
 // Firmware Version: 71CN51WW(V1.21)
 
+use List::{Cons, Nil};
+
 fn main() {
     println!("\n");
 
+    let my_list = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
+    println!("value of my_list is: {:?}", my_list);
+
     println!("\nThe End ...\n");
+}
+
+// recursive type
+#[derive(Debug)]
+enum List {
+    Cons(i32, Box<List>),
+    Nil,
 }
