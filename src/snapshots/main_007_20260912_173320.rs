@@ -25,8 +25,27 @@
 // Kernel Version: 7.2.4-200.fc44.x86_64
 // Firmware Version: 71CN51WW(V1.21)
 
+use crate::List::{Cons, Nil};
+
 fn main() {
     println!("\n");
 
+    let list_one = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
+
+    show_list(&list_one);
+
     println!("\nThe End ...\n");
+}
+
+enum List {
+    Cons(i32, Box<List>),
+    Nil,
+}
+
+fn show_list(list: &List) {
+    let mut current = list;
+    while let Cons(value, next) = current {
+        println!("element: {}", value);
+        current = next;
+    }
 }
