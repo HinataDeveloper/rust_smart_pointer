@@ -1,9 +1,5 @@
 // Date: Thu Sep 16 2026
 
-// Project: Learning Chapter 15
-// Goal: Using Smart Pointer: ...
-// Dependency: Without dependency
-
 // rustc 1.100.0-nightly (4b6d04e70 2026-09-13)
 // binary: rustc
 // commit-hash: 4b6d04e706108ccfeafe2547fbe857dfe8972bad
@@ -24,21 +20,3 @@
 
 // Kernel Version: 7.2.5-200.fc44.x86_64
 // Firmware Version: 71CN51WW(V1.21)
-
-use rust_smart_pointer::List::{Cons, Nil};
-
-fn main() {
-    println!("\n");
-
-    let list_one: rust_smart_pointer::List =
-        Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
-
-    let mut current: Option<&rust_smart_pointer::List> = list_one.tail();
-
-    while let Nil = current.unwrap() {
-        println!(" -> value is: {}", current.unwrap().head().unwrap());
-        current = current.unwrap().tail();
-    }
-
-    println!("\nThe End ...\n");
-}
